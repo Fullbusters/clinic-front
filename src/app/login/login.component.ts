@@ -21,10 +21,12 @@ export class LoginComponent implements OnInit {
     this._auth.loginUser(this.loginUserData)
     .subscribe(
       res => {
-         console.log(res)
-         console.log(res.token)
-        localStorage.setItem('token', res.token)
-        this._router.navigate(['/calendar'])
+         console.log(res),
+         console.log(res.token),
+        localStorage.setItem('token', res.token),
+        localStorage.setItem('id', res.id),
+        localStorage.setItem('role', res.role)
+        this._router.navigate(['/'])
       },
       err => console.log(err)
     ) 

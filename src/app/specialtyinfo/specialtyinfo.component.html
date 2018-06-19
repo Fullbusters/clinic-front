@@ -1,0 +1,33 @@
+<table class="table py-5">
+
+        <!--Table head-->
+        <thead>
+    
+      <tr>
+            <th>Name</th>
+            <th>Sex </th>
+            <th>phone Number</th>        
+        </tr>
+    </thead>
+  
+    <!--Table body-->
+    <tbody>
+        <tr *ngFor="let doctor of doctorList">
+            <th><a class="nav-link" routerLink="/doctorprofile/{{doctor.doctorId}}">{{doctor.name}}</a> </th>
+            <td>{{doctor.sex}}</td>
+            <td>{{doctor.phoneNumber}}</td>  
+        </tr>
+        <tr>
+          <th><hr></th>
+          <td><hr></td>
+          <td><hr></td>  
+        </tr>
+    </tbody>
+    <!--Table body-->
+  </table>
+
+<form>
+  <input type="text" [(ngModel)]="idforadd" name="name" required>
+  <button type="button" (click)="addDoctor()" class="btn btn-success ">addDoctor</button> 
+  <!-- Переробити на список лікарів які не мають спеціальності -->
+</form>

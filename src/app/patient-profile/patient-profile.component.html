@@ -1,0 +1,29 @@
+<div class="row" ng-repeat="patientdetail in patients | where:{patientId: patientIdDetails} ">
+  <div class="panel panel-default col-md-12" >
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="pull-left ">
+            <pre><h4> {{patient.firstName}}    {{patient.lastName}}        {{patient.dateOfBirth}} </h4></pre>
+          </div>
+        </div>
+      </div> 
+    </div>
+    <div class="panel-body">
+      <div class="col-md-4">
+        <div align="left" >
+          <div class="tab-content" >
+            <div >
+              <div role="tabpanel" class="tab-pane" >
+                <pre>Date of Birth         {{patient.dateOfBirth}}</pre>
+                <pre>Sex                   {{patient.sex}}</pre>
+                <pre>Phone Number          {{patient.phoneNumber}}</pre>
+                <pre>Info                  {{patient.Info}}</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

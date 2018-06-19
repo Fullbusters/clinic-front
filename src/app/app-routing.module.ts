@@ -3,9 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
-import { CalendarComponent} from './calendar/calendar.component';
-import { RegisterroleComponent} from './registerrole/registerrole.component';
 import { AuthGuard } from './auth.guard';
+import { SpecialtyComponent } from './specialty/specialty.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
+import { ProjectinfoComponent } from './projectinfo/projectinfo.component';
+import { CalendarForDoctorComponent} from './calendar-for-doctor/calendar-for-doctor.component'
+import { SpecialtyinfoComponent } from './specialtyinfo/specialtyinfo.component'
+import { RegisterdoctorComponent } from './registerdoctor/registerdoctor.component'
 
 const routes: Routes = [
   {
@@ -22,14 +27,35 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'calendar',
-    component: CalendarComponent,
-    canActivate: [AuthGuard]
+    path: 'registerdoctor',
+    component: RegisterdoctorComponent
   },
   {
-    path: 'registerrole',
-    component: RegisterroleComponent
+    path: 'specialty',
+    component: SpecialtyComponent
+  },
+  {
+    path: 'patientprofile/:id',
+    component: PatientProfileComponent
+  },
+  {
+    path: 'projectinfo',
+    component: ProjectinfoComponent,
+    //canActivate: [AuthGuard]
+  },
+  {
+    path: 'doctorprofile/:id',
+    component: DoctorProfileComponent
+  },
+  {
+    path: 'calendarfordoctor/:id',
+    component: CalendarForDoctorComponent
+  },
+  {
+    path: 'specialtyinfo/:id',
+    component: SpecialtyinfoComponent
   }
+  
 ];
 
 @NgModule({

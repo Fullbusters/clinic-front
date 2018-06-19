@@ -1,3 +1,63 @@
-<p>
-  specialty works!
-</p>
+<table class="table py-5">
+
+  <!--Table head-->
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>name of specialty</th>
+          <th>Info</th>
+      
+      </tr>
+  </thead>
+
+  <!--Table body-->
+  <tbody>
+      <tr *ngFor="let specialty of specialtys">
+          <th>{{specialty.specialtyId}}</th>
+          <td><a class="nav-link" routerLink="/specialtyinfo/{{specialty.specialtyId}}">{{specialty.name}}</a></td>
+          <td>{{specialty.info}}</td>   
+      </tr>
+      <tr>
+        <th><hr></th>
+        <td><hr></td>
+        <td><hr></td>  
+      </tr>
+  </tbody>
+  <!--Table body-->
+  
+
+</table>
+<form>
+<table class="table py-5">
+
+        <!--Table head-->
+        <thead>
+    
+      <tr>
+            <th>#</th>
+            <th>name </th>
+            <th>Info</th>
+            <th>button</th>
+        
+        </tr>
+    </thead>
+  
+    <!--Table body-->
+    <tbody>
+        <tr>
+            <th> ###</th>
+            <td><input type="text" [(ngModel)]="specialtyData.name" name="name" required></td>
+            <td> <input type="text"  [(ngModel)]="specialtyData.info" name="info" required></td>  
+            <td><button type="button" (click)="saveSpecialty()" class="btn btn-success ">Save</button></td> 
+        </tr>
+        <tr>
+          <th><hr></th>
+          <td><hr></td>
+          <td><hr></td>  
+        </tr>
+    </tbody>
+    <!--Table body-->
+    
+  
+  </table>
+</form>

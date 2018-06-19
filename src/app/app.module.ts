@@ -11,9 +11,18 @@ import { MainComponent } from './main/main.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
-import { CalendarComponent } from './calendar/calendar.component';
-import { RegisterroleComponent } from './registerrole/registerrole.component';
 import { SpecialtyComponent } from './specialty/specialty.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
+import { PatientService } from './patient.service';
+import { ProjectinfoComponent } from './projectinfo/projectinfo.component';
+import { SpecialtyService } from './specialty.service';
+import { DoctorService } from './doctor.service';
+import { CalendarForDoctorComponent } from './calendar-for-doctor/calendar-for-doctor.component';
+import { CalendarForPatientComponent } from './calendar-for-patient/calendar-for-patient.component';
+import { CalendarService } from './calendar.service';
+import { SpecialtyinfoComponent } from './specialtyinfo/specialtyinfo.component';
+import { RegisterdoctorComponent } from './registerdoctor/registerdoctor.component'
 
 
 @NgModule({
@@ -22,9 +31,14 @@ import { SpecialtyComponent } from './specialty/specialty.component';
     RegisterComponent,
     LoginComponent,
     MainComponent,
-    CalendarComponent,
-    RegisterroleComponent,
-    SpecialtyComponent
+    SpecialtyComponent,
+    PatientProfileComponent,
+    DoctorProfileComponent,
+    ProjectinfoComponent,
+    CalendarForDoctorComponent,
+    CalendarForPatientComponent,
+    SpecialtyinfoComponent,
+    RegisterdoctorComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +46,7 @@ import { SpecialtyComponent } from './specialty/specialty.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthService, AuthGuard,
+  providers: [AuthService, AuthGuard, PatientService, SpecialtyService, DoctorService, CalendarService,
   {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,

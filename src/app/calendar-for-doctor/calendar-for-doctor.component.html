@@ -1,0 +1,64 @@
+<table class="table py-5">
+
+        <!--Table head-->
+        <thead>
+    
+      <tr>
+            <th>Start_date</th>
+            <th>End_date </th>
+            <th>Duration_Visit</th>        
+        </tr>
+    </thead>
+  
+    <!--Table body-->
+    <tbody>
+        <tr *ngFor="let date of dateList">
+            <th>{{date.start_date}}</th>
+            <td>{{date.end_date}}</td>
+            <td>{{date.durationVisit}}</td>  
+        </tr>
+        <tr>
+          <th><hr></th>
+          <td><hr></td>
+          <td><hr></td>  
+        </tr>
+    </tbody>
+    <!--Table body-->
+    
+  
+  </table>
+
+<form>
+<table class="table py-5">
+
+        <!--Table head-->
+        <thead>
+    
+      <tr>
+            <th>Start_date</th>
+            <th>End_date </th>
+            <th>Duration_Visit</th>
+            <th>button</th>
+        
+        </tr>
+    </thead>
+  
+    <!--Table body-->
+    <tbody>
+        <tr>
+            <th> <input type="text" [(ngModel)]="calendarData.start_date" name="name" required></th>
+            <td><input type="text" [(ngModel)]="calendarData.end_date" name="name" required></td>
+            <td> <input type="text"  [(ngModel)]="calendarData.durationVisit" name="info" required></td>  
+            <td><button type="button" (click)="saveData()" class="btn btn-success ">Save</button></td> 
+        </tr>
+        <tr>
+          <th><hr></th>
+          <td><hr></td>
+          <td><hr></td>  
+        </tr>
+    </tbody>
+    <!--Table body-->
+    
+  
+  </table>
+</form>

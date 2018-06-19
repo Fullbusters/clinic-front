@@ -18,7 +18,31 @@
                 <label>Password</label>
                 <input type="password" [(ngModel)]="registerUserData.password" name="password" class="form-control rounded-0"  required>
               </div>
-              <button type="button" (click)="registerUser()" class="btn btn-primary float-right">Register</button>
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" [(ngModel)]="registerPatientData.firstName" name="First Name" class="form-control rounded-0"  required>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" [(ngModel)]="registerPatientData.lastName" name="Last_Name" class="form-control rounded-0"  required>
+              </div>
+              <div class="form-group">
+                <label>Date of Birth  format: yyyy-mm-dd </label>
+                <input type="text" [(ngModel)]="registerPatientData.dateOfBirth" name="Date_of_Birth" class="form-control rounded-0"  required>
+              </div>
+              <div class="form-group">
+                <label>Sex (male or female)</label>
+                <input type="text" [(ngModel)]="registerPatientData.sex" name="Sex" class="form-control rounded-0"  required>
+              </div>
+              <div class="form-group">
+                <label> Phone Number</label>
+                <input type="text" [(ngModel)]="registerPatientData.phoneNumber" name="Phone_number" class="form-control rounded-0"  required>
+              </div>
+              <div class="form-group">
+                <label>Info</label>
+                <input type="text" [(ngModel)]="registerPatientData.info" name="Info" class="form-control rounded-0"  required>
+              </div>
+              <button type="button" (click)="registerPatient()" class="btn btn-primary float-right">Register</button>
             </form>
           </div>
           <!--/card-block-->

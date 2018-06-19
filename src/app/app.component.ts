@@ -7,7 +7,9 @@ import { AuthService } from './auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
 
+  title = 'app';
+  id=localStorage.getItem('id')
+  
   constructor(private _authService: AuthService ){}
 }

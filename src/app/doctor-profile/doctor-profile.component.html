@@ -1,0 +1,29 @@
+<div class="row py-5" ng-repeat="patientdetail in patients | where:{patientId: patientIdDetails} ">
+  <div class="panel panel-default col-md-12" >
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="pull-left ">
+            <pre><h4> {{doctor.name}}            </h4></pre>
+          </div>
+        </div>
+      </div> 
+    </div>
+    <div class="panel-body">
+      <div class="col-md-4">
+        <div align="left" >
+          <div class="tab-content" >
+            <div >
+              <div role="tabpanel" class="tab-pane" >
+                <pre>Sex                   {{doctor.sex}}</pre>
+                <pre>Phone Number          {{doctor.phoneNumber}}</pre>
+                <pre>Info                  {{doctor.info}}</pre>
+                <a class="nav-link" routerLink="/calendarfordoctor/{{doctor.doctorId}}">Calendar </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

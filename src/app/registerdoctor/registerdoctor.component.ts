@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-registerdoctor',
+  templateUrl: './registerdoctor.component.html',
+  styleUrls: ['./registerdoctor.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterdoctorComponent implements OnInit {
 
   registerUserData = {}
-  registerPatientData = {}
-  Patientid =''
-  Data = [this.registerUserData,this.registerPatientData]
+  registerDoctorData = {}
+  Doctorid =''
   constructor(private _auth: AuthService,
               private _router: Router) { }
 
   ngOnInit() {
   }
 
-  registerPatient() {
-    this._auth.registerPatient(this.registerPatientData)
+  registerDoctor() {
+    this._auth.registerDoctor(this.registerDoctorData)
     .subscribe(
       res =>{
-        this.Patientid = res
+        this.Doctorid = res
         console.log(res)
         this.registerUser()
       },
@@ -31,8 +31,9 @@ export class RegisterComponent implements OnInit {
     )
     
   }
+
   registerUser(){
-    this._auth.registerUser(this.registerUserData, this.Patientid)
+    this._auth.registerUserDoctor(this.registerUserData, this.Doctorid)
     .subscribe(
       res => { 
         console.log(res),

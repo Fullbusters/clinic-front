@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">Clinic</a>
+  <a class="navbar-brand" routerLink="/">Clinic</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,10 +7,10 @@
   <div class="collapse navbar-collapse" id="navbar1">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">test </a>
+          <a class="nav-link" routerLink="/specialty">Specialty </a>
         </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" routerLink="/">future</a>
       </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">future</a>
@@ -25,12 +25,88 @@
     <form class="form-inline my-2 my-lg-0">
       <a class="nav-link" *ngIf="!_authService.loggedIn()"  routerLink="/login">Login</a>
       <a class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/register">Reg</a>
+      <a class="nav-link" *ngIf="_authService.loggedIn() && _authService.doctorIn()"  routerLink="/doctorprofile/{{id}}">DoctorProfile</a>
+      <a class="nav-link" *ngIf="_authService.loggedIn() && !_authService.doctorIn()"  routerLink="/patientprofile/{{id}}">PatientProfile</a>
       <a class="nav-link" style="cursor: pointer" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Logout</a>
     </form>
   </div>
 </nav>
-
 <div class="container">
   <router-outlet></router-outlet>
 </div>
 
+<!-- Footer -->
+<footer class="page-footer font-small indigo mt-4">
+
+  <!-- Footer Links -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="/" routerLink="/">Main</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="/specialty" >Specialty</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="/projectinfo" >About project</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="/registerdoctor">registerdoctor</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="/">future</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="rgba-white-light" style="margin: 0 15%;">
+
+    <!-- Grid row-->
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+      <!-- Grid column -->
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">Сайт поліклініки на якому повинно бути сторінка реестрації логіну, 3 ролі (адмін, піцієнт, лікар), та календар на якому можна назначати зустріч з лікарем </p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+   
+
+  </div>
+  <!-- Footer Links -->
+
+
+
+</footer>
+<!-- Footer -->
